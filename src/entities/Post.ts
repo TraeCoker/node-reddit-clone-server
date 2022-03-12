@@ -4,13 +4,13 @@ import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
 export class Post {
 
   @PrimaryKey()
-  id!: number;
+  id: number;
 
   @Property({type: 'date'})
-  createdAt = new Date();
+  createdAt? = new Date();
 
   @Property({type: 'date', onUpdate: () => new Date() })
-  updatedAt = new Date();
+  updatedAt? = new Date();
 
   @Property({type: 'text'})
   title!: string;
